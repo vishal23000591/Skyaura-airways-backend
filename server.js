@@ -9,7 +9,10 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:5173", // frontend port
+  origin: [
+    "http://localhost:5173",                // local dev
+    "https://skyaura-airways-e0iy.onrender.com"      // your Vercel frontend
+  ],
   credentials: true
 }));
 app.use(express.json());
